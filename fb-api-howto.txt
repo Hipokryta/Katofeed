@@ -1,0 +1,6 @@
+1. https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$app_secret}
+   gdzie app_id i app_secret to, odpowiednio, App ID i App Secret (UWAGA: w ustawieniach aplikacji FB: Native or desktop? Native)
+   zwroci cos w rodzaju:
+    access_token=7vvvv|Cc78LKIdzzzz
+2. https://graph.facebook.com/v2.2/slaskacegla/posts?access_token=7vvvv|Cc78LKIdzzzz
+   gdzie "access_token=..." z tego wyzej; dostaniesz JSON-a
