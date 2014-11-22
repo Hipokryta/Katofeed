@@ -25,6 +25,24 @@ function fetchUrl($url) {
 
 }
 
+// http://php.net/manual/en/function.array-multisort.php
+function array_orderby()
+{
+    $args = func_get_args();
+    $data = array_shift($args);
+    foreach ($args as $n => $field) {
+        if (is_string($field)) {
+            $tmp = array();
+            foreach ($data as $key => $row)
+                $tmp[$key] = $row[$field];
+            $args[$n] = $tmp;
+            }
+    }
+    $args[] = &$data;
+    call_user_func_array('array_multisort', $args);
+    return array_pop($args);
+}
+
 // cache na szybko...
 $CACHEFILE = 'fbjsoncache';
 $CACHETIME = 300; // w sek.
@@ -105,6 +123,7 @@ if (! file_exists($CACHEFILE) or (time() - filemtime($CACHEFILE) > $CACHETIME)) 
 			$FBStream_reindexed[] = $row;
 		}
 	}
+	$FBStream_reindexed = array_orderby($FBStream_reindexed, 'data', SORT_DESC);
 	$json = json_encode($FBStream_reindexed);
 	echo $json;
 	
