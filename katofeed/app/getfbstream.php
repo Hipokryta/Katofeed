@@ -71,7 +71,7 @@ $ids_tmp = array();
 $MAX_IDS_PER_REQUEST = 25;
 //print_r($FBStream);die();
 $FBStreamForLoop = $FBStream;
-foreach ($FBStream as $object_id => $row) {
+foreach ($FBStreamForLoop as $object_id => $row) {
 	//print_r($object_id);die();
 	$ids_tmp[] = $object_id;
 	$c++;
@@ -95,4 +95,10 @@ foreach ($FBStream as $object_id => $row) {
 		
 }
 
-print_r(json_encode($FBStream));
+$FBStream_reindexed = array();
+foreach ($FBStream as $id => $row) {
+	if (isset($row['photo_url'])) {
+		$FBStream_reindexed[] = $row;
+	}
+}
+echo json_encode($FBStream_reindexed);
