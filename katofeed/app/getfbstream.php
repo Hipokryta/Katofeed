@@ -127,7 +127,7 @@ if (! file_exists($CACHEFILE) or (time() - filemtime($CACHEFILE) > $CACHETIME)) 
 	$json = json_encode($FBStream_reindexed);
 	echo $json;
 	
-	if ($json) {
+	if ($json and $json != '[]') {
 		$fh = @fopen($CACHEFILE, 'w');
 		if ($fh) {
 			fwrite($fh, $json);
