@@ -11,7 +11,7 @@ angular.module('noweDzieloApp')
   .controller('AboutCtrl', function ($scope,$http) {
     // Set of Photos
     $scope.photos = [];
-        $http.get('http://katofeed.local/getfbstream.php')
+        $http.get('getfbstream.php')
             .success(function(res) {
             $scope.photos = res;
             $scope.description = $scope.photos[0].opis

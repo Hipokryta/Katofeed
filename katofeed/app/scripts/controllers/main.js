@@ -18,7 +18,7 @@ angular.module('noweDzieloApp')
 	$scope.changingStyle = null;
 	$scope.endOfSite = 10;
 
-	$http.get('http://katofeed.local/getfbstream.php')
+	$http.get('getfbstream.php')
             .success(function(res) {
             $scope.imagesArray = res;
             console.log(res);
