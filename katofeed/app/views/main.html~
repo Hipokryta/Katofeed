@@ -1,0 +1,49 @@
+<!-- <button ng-click="myStyle={'background-color':'#8fc800'}">GREEN</button>
+<button ng-click="myStyle={'background-color':'red'}">RED</button>
+<button ng-click="myStyle={'background-color':'yellow'}">YELLOW</button> -->
+    
+<div class="wrapper theme3" ng-style="myStyle">
+    <h1 class="header-page">Test</h1>
+    <section class="image-box first">
+        <div class="img-container">
+          <img src="http://www.wojteknowak.com/wp-content/uploads/2013/03/katowice-euro2012-mecz-polska-rosja-spodek-fullhd-16x10.jpg" alt="">
+        </div>
+        <p class="image-desc">Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Dolor hic, assumenda neque quisquam atque cupiditate? Eius vero ducimus sapiente deserunt, dolorem exercitationem ipsa tempora magni fugiat modi, molestias sint illo.</p>
+        <h3 class="image-nick">Nick</h3>
+        <time class="image-time">9 godzin temu</time>
+        <div class="comments">
+          <a href="#" class="show-comments">Pokaż komentarze (12)</a>
+          <ul class="comments-list">
+            <li>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, qui! Expedita tempora voluptatibus, quas, cum perspiciatis ipsa ipsam necessitatibus, corporis ab vero sit quasi facere, officiis maiores. Mollitia, deserunt, enim.
+              <br>
+              <strong class="nick">~astkats421</strong></p>
+            </li>
+            <li>
+              <p>Ipsum consectetur, sapiente cum quia incidunt, sequi error dolor id eum qui quae unde officiis quas ipsa voluptas officia dolores. Cupiditate, dolorum iste nostrum perspiciatis incidunt sed dolores fugiat temporibus.
+              <br>
+              <strong  class="nick">~astkats421</strong></p>
+            </li>
+            <li>
+              <p>Cupiditate, laborum enim quos ad placeat vitae explicabo aperiam nam praesentium porro doloribus alias, ratione. Ex, adipisci, labore obcaecati repudiandae mollitia ea repellat dolorem fuga, pariatur autem at necessitatibus id.
+              <br>
+              <strong >~astkats421</strong></p>
+            </li>
+          </ul>
+        </div>
+    </section>
+    <div infinite-scroll="myPagingFunction()" infinite-scroll-distance="3" >
+        <section class="image-box" ng-repeat="image in imagesArray | limitTo:endOfSite">
+            <div class="img-container">
+                <img src="{{image.image}}" alt="">
+            </div>
+            <p class="image-desc">{{image.desc}}</p>
+            <h3 class="image-nick">Nick</h3>
+            <time class="image-time">9 godzin temu</time>
+        </section>
+      </div>
+    <div class="loading"><img src="img/loading.gif" alt="ładowanie"></div>
+  </div>
+
+       
+      

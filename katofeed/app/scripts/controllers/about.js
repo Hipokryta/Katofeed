@@ -8,30 +8,19 @@
  * Controller of the noweDzieloApp
  */
 angular.module('noweDzieloApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', function ($scope,$http) {
     // Set of Photos
-     $scope.photos = [];
-    $scope.photos[0] = {src:'images/kato.jpg',desc:'DUPA'};
-    $scope.photos[1] = {src:'images/COMA.jpg',desc:'poqpeowqp'};
-    $scope.photos[2] = {src:'images/images (2).jpg', desc:'4tttt'};
-  	$scope.photos[3] = {src:'images/images.jpg',desc:'jjdvlkjvd'};
-	$scope.photos[4] = {src:'images/1.jpg',desc:'DUPA'};
-    $scope.photos[5] = {src:'images/COMA.jpg',desc:'poqpeowqp'};
-    $scope.photos[6] = {src:'images/images (2).jpg', desc:'4tttt'};
-  	$scope.photos[7] = {src:'images/images.jpg',desc:'jjdvlkjvd'};
-	$scope.photos[8] = {src:'images/1.jpg',desc:'DUPA'};
-    $scope.photos[9] = {src:'images/COMA.jpg',desc:'poqpeowqp'};
-    $scope.photos[10] = {src:'images/images (2).jpg', desc:'4tttt'};
-  	$scope.photos[11] = {src:'images/images.jpg',desc:'jjdvlkjvd'};
-	$scope.photos[12] = {src:'images/1.jpg',desc:'DUPA'};
-    $scope.photos[13] = {src:'images/COMA.jpg',desc:'poqpeowqp'};
-    $scope.photos[14] = {src:'images/images (2).jpg', desc:'4tttt'};
-  	$scope.photos[15] = {src:'images/images.jpg',desc:'jjdvlkjvd'};
+    $scope.photos = [];
+        $http.get('http://katofeed.local/getfbstream.php')
+            .success(function(res) {
+            $scope.photos = res;
+            console.log(res);
+        });
 	
 
     // initial image index
     $scope._Index = 0;
-    $scope.description = $scope.photos[0].desc;
+    // $scope.description = $scope.photos[0].opis;
     // if a current image is the same as requested image
     $scope.isActive = function (index,desc) {
         return $scope._Index === index;
@@ -49,9 +38,9 @@ angular.module('noweDzieloApp')
     };
 
     // show a certain image
-    $scope.showPhoto = function (index, desc) {
+    $scope.showPhoto = function (index) {
         $scope._Index = index;
-        $scope.description = desc;
+        
         console.log($scope.description);
     };
   });
