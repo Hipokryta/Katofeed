@@ -10,7 +10,6 @@
 angular.module('noweDzieloApp')
   .controller('MenuCtrl', function ($scope,$location) {
     
-	console.log('dupa');
   $scope.isCurrentPath = function (path) {
       return $location.path() == path;
     };
