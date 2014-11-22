@@ -138,3 +138,6 @@ p{
  margin-left:300px;
   width: 50%;
 }
+@-ms-viewport{
+  width: device-width;
+}
