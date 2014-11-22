@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc directive
+ * @ngdoc directive 
  * @name noweDzieloApp.directive:menu
  * @description
  * # menu

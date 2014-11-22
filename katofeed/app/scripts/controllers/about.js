@@ -19,7 +19,7 @@ angular.module('noweDzieloApp')
         });
 	
 
-    // initial image index
+    //  initial image index
     $scope._Index = 0;
     
     // if a current image is the same as requested image

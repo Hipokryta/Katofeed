@@ -17,7 +17,7 @@ angular.module('noweDzieloApp')
 	
 	$scope.changingStyle = null;
 	$scope.endOfSite = 10;
-
+ 
 	$http.get('getfbstream.php')
             .success(function(res) {
             $scope.imagesArray = res;
