@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name katofeedApp.controller:MainCtrl
+ * @name katofeedApp.controller:MainCtrl 
  * @description
  * # MainCtrl
  * Controller of the katofeedApp
