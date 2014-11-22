@@ -14,16 +14,18 @@ angular.module('noweDzieloApp')
         $http.get('http://katofeed.local/getfbstream.php')
             .success(function(res) {
             $scope.photos = res;
+            $scope.description = $scope.photos[0].opis
             console.log(res);
         });
 	
 
     // initial image index
     $scope._Index = 0;
-    // $scope.description = $scope.photos[0].opis;
+    
     // if a current image is the same as requested image
-    $scope.isActive = function (index,desc) {
+    $scope.isActive = function (index) {
         return $scope._Index === index;
+
         
     };
 
@@ -40,7 +42,7 @@ angular.module('noweDzieloApp')
     // show a certain image
     $scope.showPhoto = function (index) {
         $scope._Index = index;
-        
+        $scope.description = $scope.photos[index].opis
         console.log($scope.description);
     };
   });

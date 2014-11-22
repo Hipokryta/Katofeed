@@ -11,7 +11,7 @@ angular.module('noweDzieloApp')
     return {
       templateUrl: 'views/menu.html',
       restrict: 'AE',
-      controller: 'MainCtrl'
+      controller: 'MenuCtrl'
       
     };
   });

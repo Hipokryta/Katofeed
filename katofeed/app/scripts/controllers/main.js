@@ -8,7 +8,7 @@
  * Controller of the katofeedApp
  */
 angular.module('noweDzieloApp')
-  .controller('MainCtrl', function ($scope,$location, $http) {
+  .controller('MainCtrl', function ($scope, $http) {
     $scope.imagesArray = [];
    //  $scope.imagesArray[0] = {image:'images/1.jpg',desc:'DUPA'};
    //  $scope.imagesArray[1] = {image:'images/COMA.jpg',desc:'poqpeowqp'};
@@ -23,8 +23,6 @@ angular.module('noweDzieloApp')
             $scope.imagesArray = res;
             console.log(res);
             });
-  $scope.isCurrentPath = function (path) {
-      return $location.path() == path;
-    };
+  
 	
   });

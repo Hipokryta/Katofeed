@@ -57,6 +57,7 @@
 }
 .photoNav li img {
     width: 100%;
+    height: 30px;
 }
 
 .slider {
@@ -83,6 +84,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    max-height: 600px;
+
 }
 .slide.ng-hide-add {
     opacity:1;
@@ -123,7 +126,15 @@ body > div.ng-scope > div{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.desc{
+    width: 100%;
+    text-align: center;
+     margin-left:25%;
+}
 p{
   margin-top:50px;
   text-align: center;
+ left:50%;
+ margin-left:300px;
+  width: 50%;
 }
