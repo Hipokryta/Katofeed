@@ -2,16 +2,21 @@
 
 /**
  * @ngdoc overview
- * @name katofeedApp
+ * @name noweDzieloApp
  * @description
- * # katofeedApp
+ * # noweDzieloApp
  *
  * Main module of the application.
  */
 angular
-  .module('katofeedApp', [
+  .module('noweDzieloApp', [
+    'ngAnimate',
+    'ngCookies',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch',
+    'infinite-scroll'
   ])
   .config(function ($routeProvider) {
     $routeProvider

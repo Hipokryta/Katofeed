@@ -1,6 +1,21 @@
-<ul>
-	<li><img src="images/1.png"></li>
-	<li><img src="images/COMA.jpg"></li>
-	<li><img src="images/1.png"></li>
-	<li><img src="images/1.png"></li>
-</ul>
+<!-- slider container -->
+    <div class="container slider">
+
+        <!-- enumerate all photos -->
+        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index,'{{photo.desc}}')"  ng-src="{{photo.src}}" />
+
+        <!-- prev / next controls -->
+        <a class="arrow prev" href="#" ng-click="showPrev()"></a>
+        <a class="arrow next" href="#" ng-click="showNext()"></a>
+
+        <!-- extra navigation controls -->
+        <ul class="photoNav">
+            <li ng-repeat="photo in photos | limitTo:10" ng-class="{'active':isActive($index)}">
+                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index,'{{photo.desc}}');" />
+        	
+            </li>
+
+        </ul>
+    </div>
+    <br/><br/><br/>
+        <p>{{description}}</p>
