@@ -7,11 +7,17 @@
  * # MainCtrl
  * Controller of the katofeedApp
  */
-angular.module('katofeedApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('noweDzieloApp')
+  .controller('MainCtrl', function ($scope, $http) {
+    $scope.imagesArray = [];
+	
+	
+ 
+	$http.get('getfbstream.php')
+            .success(function(res) {
+            $scope.imagesArray = res;
+            console.log(res);
+            });
+  
+	
   });

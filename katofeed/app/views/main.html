@@ -1,16 +1,21 @@
-<div class="image-box">
-  <li><img src="images/1.jpg"></li>
-  <p  class="description"></p>
-</div>
-<div class="image-box">
-  <li><img src="images/COMA.jpg"></li>
-  <p  class="description"></p>
-</div>
-<div class="image-box">
-  <li><img src="images/images.jpg"></li>
-  <p  class="description"></p>
-</div>
-<div class="image-box">
-  <li><img src="images/images (2).jpg"></li>
-  <p  class="description"></p>
-</div>
+<!-- <button ng-click="myStyle={'background-color':'#8fc800'}">GREEN</button>
+<button ng-click="myStyle={'background-color':'red'}">RED</button>
+<button ng-click="myStyle={'background-color':'yellow'}">YELLOW</button> -->
+     
+<div class="wrapper theme3" ng-style="myStyle">
+    <h1 class="header-page">GALERIA</h1>
+    
+    <div infinite-scroll="myPagingFunction()" infinite-scroll-distance="3" >
+        <section class="image-box" ng-repeat="image in imagesArray ">
+            <div class="img-container">
+                <a href="{{image.fb_link}}"><img src="{{image.photo_url}}" alt=""></a>
+            </div>
+            <p class="image-desc">{{image.opis}}</p>
+            <h3 class="image-nick">{{image.autor}}</h3>
+            <time class="image-time">{{image.data}}</time>
+        </section>
+      </div>
+  </div>
+
+       
+      
