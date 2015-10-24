@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc overview
- * @name katofeedApp
+ * @name katofeedwwApp
  * @description
  * # katofeedApp
  *
